@@ -104,13 +104,13 @@
                                         <li>Hives</li>
                                         <li>HiveNodes</li>
                                     </ul>
-                                    <p>Hives can be created to bundle multiple hive nodes</p>
+                                    <p>Hives can be created to bundle multiple hive nodes.</p>
                                     <p>Hive nodes contain the main data of the hive. They can get linked and together they build the actual hive.</p>
                                     <p>To create a jig one has to extend from the Jig class. After creation of the jig, the tx gets sent and the jig will get included on the chain.</p>
                                     <h6></h6>
                                     <img src="objects.001.png" style='width:100%;' border="0"  alt="Jig inheritancee">
                                     <p>We inherited Hive and HiveNode from the Jig Class and store it on the blockchain. No additional persistence needed.</p>
-                                    <h6>Codee that represents a Hive</h6>
+                                    <h6>Code that represents a Hive</h6>
                                     <pre><code class="language-javascript">
                                     <script>
 export default class Hive extends window.Run.Jig {
@@ -118,8 +118,6 @@ export default class Hive extends window.Run.Jig {
         this.name = name;
         this.description = description;
         this.owner = owner;
-        this.owners = [];
-        this.owners.push(owner);
         this.category = category;
         this.satoshis = satoshis;
         this.image = image;
@@ -156,8 +154,96 @@ export default class HiveNode extends window.Run.Jig {
                                     </code></pre>
 
                                 <img src="objects.002.png" style='width:100%;' border="0"  alt="Smiley face">
+                                    <p>At the start of the application one has to create a hive. A hive is described by a name, description, owner, category, satoshis and an image url. The run framework creates a transaction immediately once a user has added a hive (and has sufficient balance to do so). If the user navigates into the hive, he or a third party can create Nodes that get added to that hive. Thus a node contains the information of the parent Hive as well as an optional link to a different node. Using those links a whole (bee)hive can be created.</p>
                                 </div>
 
+
+
+                                <div id="hive" class=section-block">
+                                    <h6>Hive</h6>
+                                    <p>A hive is defined by the following attributes:</p>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>Attribute</th>
+                                                <th>Description</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th>name</th>
+                                                <td>Title of the hive</td>
+                                            </tr>
+                                            <tr>
+                                                <th>description</th>
+                                                <td>Description of the hive</td>
+                                            </tr>
+                                            <tr>
+                                                <th>owner</th>
+                                                <td>Whoever created the hive</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Category</th>
+                                                <td>Category of the hive (Politics, Cryptocurrency, ...)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Satoshis</th>
+                                                <td>The creater of the hive can spend a specific amount of satoshis, that will be distributed among all the contributers of the hive (e.g. the ones that create HiveNodes)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Image</th>
+                                                <td>The url of the image that will be displayed in the Hive app</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="hiveNode" class=section-block">
+                                    <h6>HiveNode</h6>
+                                    <p>A HiveNode is defined by the following attributes:</p>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>Attribute</th>
+                                                <th>Description</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th>name</th>
+                                                <td>Title of the hive-node</td>
+                                            </tr>
+                                            <tr>
+                                                <th>description</th>
+                                                <td>Description of the hive-node</td>
+                                            </tr>
+                                            <tr>
+                                                <th>owner</th>
+                                                <td>Whoever created the hive-node</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Url</th>
+                                                <td>The url that references to the article described in the hive-node.</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Image</th>
+                                                <td>The url of the image that will be displayed in the hive-node</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Hive Origin</th>
+                                                <td>The hive that the node belongs to</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Previous node</th>
+                                                <td>Optional parameter: if set, a link gets created between this node and the previous node, thus creating a hive-like structure.</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
 
 
 
@@ -504,9 +590,9 @@ echo $y;
                                     </nav><!--//nav-->
 	                                <a class="nav-link scrollto" href="#code-section">Code</a>
                                     <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#html">HTML</a>
-                                        <a class="nav-link scrollto" href="#css">CSS</a>
-                                        <a class="nav-link scrollto" href="#sass">Sass</a>
+                                        <a class="nav-link scrollto" href="#run">run</a>
+                                        <a class="nav-link scrollto" href="#hive">Hive</a>
+                                        <a class="nav-link scrollto" href="#hiveNode">HiveNode</a>
                                         <a class="nav-link scrollto" href="#less">LESS</a>
                                         <a class="nav-link scrollto" href="#javascript">JavaScript</a>
                                         <a class="nav-link scrollto" href="#python">Python</a>
