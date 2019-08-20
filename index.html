@@ -46,18 +46,18 @@
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
                         <div class="content-inner">
+                            <section id="hive-section" class="doc-section">
+                                <h2 class="section-title">Hive</h2>
+                                <div class="section-block">
+                                    <p>A platform that acts as a “beehive” of connecting information - where each individual adds connections and new information or other media. Each “Hive” exists of objects (Run/Jiggs) that contain information and have pointers to other objects. Those objects can contain weblinks. If different hives connect, it might become like an interactive book that always lets you go on routes that you might want to read more about next.</p>
+                                </div>
+                            </section>
                             <section id="download-section" class="doc-section">
                                 <h2 class="section-title">Download</h2>
                                 <div class="section-block">
                                     <p>The hive application can be forked, cloned or downloaded through github:
                                     </p>
                                     <a href="https://github.com/Kohze/Hive" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Hive on github</a>
-                                    <div id="step1"  class="section-block">
-                                    <p>
-                                        You can view the running application here:
-                                    </p>
-                                    <a href="http://hive.kohze.com" class="btn btn-green" target="_blank"><i class="fas fa-download"></i>Hive</a>
-                                    </div>
                                 </div>
                             </section><!--//doc-section-->
                             <section id="installation-section" class="doc-section">
@@ -286,12 +286,40 @@ export default class HiveNode extends window.Run.Jig {
 
                             
                             </section><!--//doc-section-->
+
+                            <section id="known-limitations" class="doc-section">
+                                <h2 class="section-title">Known limitations</h2>
+                                <div class="section-block">
+                                    <p></p>
+                                    <ul>
+                                        <li>run framework: due to its alpha state, we found various issues with the framework. We got helped by their developers within the time of the hackathon but unfortunately there might be error messages when trying to create a tx.</li>
+                                        <li>The current state of the UI does not include any validations and proper error handling</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section id="futher-improvements" class="doc-section">
+                                <h2 class="section-title">Further improvements</h2>
+                                <div class="section-block">
+                                    <p>In order to improve the application, the team already has the following ideas:</p>
+                                    <li>
+                                        <ul>interactivity with other BSV applications (etched, moneybutton)</ul>
+                                        <ul>Filter the hives based on the category</ul>
+                                        <ul>bsv payments & tips to content creators</ul>
+                                        <ul>potentially tokenized tips to creators</ul>
+                                        <ul>pay each member of a selected list on each added link in the hive</ul>
+                                        <ul>comment function on the hive and its node</ul>
+                                    </li>
+                                </div>
+                            </section>
+
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
                         <div id="doc-nav" class="doc-nav">
 	                        
 	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+	                                <a class="nav-link scrollto" href="#hive-section">Hive</a>
 	                                <a class="nav-link scrollto" href="#download-section">Download</a>
 	                                <a class="nav-link scrollto" href="#installation-section">Installation</a>
                                     <nav class="doc-sub-menu nav flex-column">
@@ -305,6 +333,8 @@ export default class HiveNode extends window.Run.Jig {
                                         <a class="nav-link scrollto" href="#login">Login</a>
                                         <a class="nav-link scrollto" href="#queryBlockhain">Querying the blockchain</a>
                                     </nav><!--//nav-->
+                                    <a class="nav-link scrollto" href="#known-limitations">Known limitations</a>
+                                    <a class="nav-link scrollto" href="#further-improvements">Further improvements</a>
 	                            </nav><!--//doc-menu-->
 	                        
                         </div>
