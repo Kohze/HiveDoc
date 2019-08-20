@@ -268,14 +268,29 @@ export default class HiveNode extends window.Run.Jig {
         })
                                     </script>
                                     </code></pre>
-                                    <p>The app defines a prefix, which later can used to query the blockchain.</p>
+                                    <p>The app defines a prefix ('HiveTest'), which later can used to query the blockchain.</p>
                                 </div>
 
                                 <br />
                                 <div id="queryBlockchain" class=section-block">
                                     <h6>Query the blockchain</h6>
-                                    <p>In order to get all the transactions that MAY represent a run transaction AND might be a transaction related to hive, we used the following approach:
-                                    </p>
+                                    <p>Example of a jig transaction: <a href="https://whatsonchain.com/tx/44b7891370481142b19bc3e67346ec836ee0311d61881f6d1e2f86873b7f6ab0" target="blank">44b7891370481142b19bc3e67346ec836ee0311d61881f6d1e2f86873b7f6ab0</a></p>
+                                    <p>One can see the mentioned prefix ('HiveTest') in the OP_RETURN</p>
+                                    <br/>
+                                    <h6>OP_RETURN decoded:</h6>
+                                    <code>run,,HiveTest,_i0sG$p}HiF</code>
+                                </div>
+
+
+                                <br />
+                                <div id="queryhives" class="section-block">
+                                    <h5>Get Hive jigs</h5>
+                                    <p>The run-framework provides a functionality to get the jig object out of the chain using the load() method. In order to specify the jig, one needs its origin or current location (updated jigs). Furthermore run gives the user the ability, to get all the jigs created by the same owner of the keys. In the hive project we faced the issue, that we are unable to get all the Hives, since various contributors are creating jigs in the Hive environment.</p>
+                                    <p>Hive makes use of the BitDB <a href="https://docs.bitdb.network/docs/query_v3">Bitquery API</a>.
+                                    With the following query Hive is able to fetch all transactions that contain an OP_RETURN with the defined prefix ('HiveTest').</p>
+                                    <code>
+                                        https://genesis.bitdb.network/q/1FnauZ9aUH2Bex6JzdcV4eNX7oLSSEbxtN/ewogICJ2IjogMywKICAicSI6IHsKICAgICJmaW5kIjogeyJvdXQuczIiOiAicnVuIiwgIm91dC5zNCI6IkhpdmVUZXN0In0sCiAgICAibGltaXQiOiAxMAogIH0KfQ==
+                                    </code>
                                 </div>
 
 
@@ -331,7 +346,8 @@ export default class HiveNode extends window.Run.Jig {
                                         <a class="nav-link scrollto" href="#hive">Hive</a>
                                         <a class="nav-link scrollto" href="#hiveNode">HiveNode</a>
                                         <a class="nav-link scrollto" href="#login">Login</a>
-                                        <a class="nav-link scrollto" href="#queryBlockhain">Querying the blockchain</a>
+                                        <a class="nav-link scrollto" href="#queryBlockchain">Query the blockchain</a>
+                                        <a class="nav-link scrollto" href="#queryhives">Get Hive Jigs</a>
                                     </nav><!--//nav-->
                                     <a class="nav-link scrollto" href="#known-limitations">Known limitations</a>
                                     <a class="nav-link scrollto" href="#further-improvements">Further improvements</a>
